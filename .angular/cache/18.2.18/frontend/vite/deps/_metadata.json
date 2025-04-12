@@ -1,34 +1,43 @@
 {
-  "hash": "c6421af4",
-  "configHash": "45f9fc8c",
-  "lockfileHash": "c02836ac",
-  "browserHash": "f6b7f562",
+  "hash": "7c624819",
+  "configHash": "7721e8d2",
+  "lockfileHash": "fc13e30d",
+  "browserHash": "d65ac82e",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "d6b4dd8f",
+      "fileHash": "cbb803be",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "b34d7532",
+      "fileHash": "f2ac3502",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "b33d2905",
+      "fileHash": "c397a3c2",
+      "needsInterop": false
+    },
+    "tailwindcss": {
+      "src": "../../../../../../node_modules/tailwindcss/dist/lib.mjs",
+      "file": "tailwindcss.js",
+      "fileHash": "b10b3113",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-F7U72CD4": {
-      "file": "chunk-F7U72CD4.js"
+    "chunk-C74MPBZ5": {
+      "file": "chunk-C74MPBZ5.js"
     },
-    "chunk-MBENSOCI": {
-      "file": "chunk-MBENSOCI.js"
+    "chunk-PHFBGYCZ": {
+      "file": "chunk-PHFBGYCZ.js"
+    },
+    "chunk-WDMUDEB6": {
+      "file": "chunk-WDMUDEB6.js"
     }
   }
 }
