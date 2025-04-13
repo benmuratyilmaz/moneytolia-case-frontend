@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/campaigns",
+    "/forget-password",
+    "/login",
+    "/new-campaign",
+    "/sign-up"
+  ]
+}

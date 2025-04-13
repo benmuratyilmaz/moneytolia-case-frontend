@@ -1,0 +1,58 @@
+<div
+  class="flex flex-col justify-center items-center md:items-end p-8 position relative h-[100%]"
+>
+  <div class="w-full md:w-100">
+    <img class="mb-5" src="/images/logo.png" alt="logo" />
+    <h1 class="font-[700] text-[32px] text-[#FF4307]"> {{isFormTitle}} </h1>
+    <p class="text-[16px] mb-10" *ngIf="isSignUpButton">
+      Hesabınız yok mu?
+      <a [routerLink]="['/sign-up']" class="font-[600] text-[#FF4307]"
+        >Hesap Oluştur</a
+      >
+    </p>
+    <form class="flex flex-col items-start">
+      <app-input
+        *ngIf="isEmail"
+        [type]="'email'"
+        [styleType]="'login'"
+        [placeholder]="'E-Posta'"
+        class="w-full md:w-100"
+      >
+      </app-input>
+      <app-input
+        *ngIf="isPassword"
+        [type]="'password'"
+        [styleType]="'login'"
+        [placeholder]="'Şifre'"
+        class="w-full md:w-100"
+      >
+      </app-input>
+      <app-input
+        *ngIf="isPasswordRepat"
+        [type]="'password'"
+        [styleType]="'login'"
+        [placeholder]="'Şifre Tekrar'"
+        class="w-full md:w-100"
+      >
+      </app-input>
+      <div
+        *ngIf="isForgetPasswordButton"
+        class="flex justify-end items-center max-w-100 md:w-100 mb-8"
+      >
+        <div>
+          <a
+            class="text-[#FF4307] font-[600] hover:text-[#062e4d] transition-all delay-150 duration-300"
+            [routerLink]="['/forget-password']"
+            >Şifremi Unuttum</a
+          >
+        </div>
+      </div>
+      <app-button
+        [styleType]="'login'"
+        [label]="isSubmitButtonLabel"
+        class="w-full"
+        [url]="url"
+      ></app-button>
+    </form>
+  </div>
+</div>

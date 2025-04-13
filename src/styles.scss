@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #062e4d;
+  font-size: 16px;
+  background-color: rgb(245 247 249 / var(--tw-bg-opacity, 1));
+}
+
+h1,
+h2,
+th {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}

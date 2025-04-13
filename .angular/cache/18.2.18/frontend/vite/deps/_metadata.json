@@ -1,37 +1,58 @@
 {
-  "hash": "7c624819",
-  "configHash": "7721e8d2",
-  "lockfileHash": "fc13e30d",
-  "browserHash": "d65ac82e",
+  "hash": "0ac18057",
+  "configHash": "a10f7c00",
+  "lockfileHash": "18f6c3ca",
+  "browserHash": "5924e036",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "7e6da8f8",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "cbb803be",
+      "fileHash": "54b9500d",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "f2ac3502",
+      "fileHash": "d7993793",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "c397a3c2",
+      "fileHash": "ffb47db9",
+      "needsInterop": false
+    },
+    "@fortawesome/angular-fontawesome": {
+      "src": "../../../../../../node_modules/@fortawesome/angular-fontawesome/fesm2022/angular-fontawesome.mjs",
+      "file": "@fortawesome_angular-fontawesome.js",
+      "fileHash": "08abe8d9",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../../../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "be6a81d3",
       "needsInterop": false
     },
     "tailwindcss": {
       "src": "../../../../../../node_modules/tailwindcss/dist/lib.mjs",
       "file": "tailwindcss.js",
-      "fileHash": "b10b3113",
+      "fileHash": "017c821a",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-C74MPBZ5": {
-      "file": "chunk-C74MPBZ5.js"
+    "chunk-PDRKVAOH": {
+      "file": "chunk-PDRKVAOH.js"
+    },
+    "chunk-IMENVMIE": {
+      "file": "chunk-IMENVMIE.js"
     },
     "chunk-PHFBGYCZ": {
       "file": "chunk-PHFBGYCZ.js"
