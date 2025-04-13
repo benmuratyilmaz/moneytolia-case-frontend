@@ -4,36 +4,30 @@ import {
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-input',
+  selector: 'app-textarea',
   standalone: true,
   imports: [],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.scss',
+  templateUrl: './textarea.component.html',
+  styleUrl: './textarea.component.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
+      useExisting: forwardRef(() => TextareaComponent),
       multi: true
     }
   ]
 })
-export class InputComponent implements ControlValueAccessor {
+export class TextareaComponent implements ControlValueAccessor {
   @Input() placeholder: string = "";
-  @Input() type: string = "text";
   @Input() value: string = "";
   @Input() styleType: string = "normal";
   @Output() valueChange = new EventEmitter<string>();
 
   get inputStyle(): string {
     switch (this.styleType) {
-      case "login":
-        return "border border-[#B1BBC2] mb-5 rounded-md py-3 ps-3 w-full max-w-[25rem]";
-        break;
       case "normal":
         return "border border-[#B1BBC2] mb-1 rounded-md py-3 ps-3 w-full";
-        break;
       default:
         return "";
     }

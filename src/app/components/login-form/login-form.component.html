@@ -3,19 +3,30 @@
 >
   <div class="w-full md:w-100">
     <img class="mb-5" src="/images/logo.png" alt="logo" />
-    <h1 class="font-[700] text-[32px] text-[#FF4307]"> {{isFormTitle}} </h1>
+    <h1 class="font-[700] text-[32px] text-[#FF4307]">{{ isFormTitle }}</h1>
     <p class="text-[16px] mb-10" *ngIf="isSignUpButton">
       Hesabınız yok mu?
       <a [routerLink]="['/sign-up']" class="font-[600] text-[#FF4307]"
         >Hesap Oluştur</a
       >
     </p>
-    <form class="flex flex-col items-start">
+    <p class="text-[16px] mb-10" *ngIf="!isSignUpButton">
+      Hesabınız mı var?
+      <a [routerLink]="['/login']" class="font-[600] text-[#FF4307]"
+        >Giriş Yap</a
+      >
+    </p>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col items-start"
+    >
       <app-input
         *ngIf="isEmail"
         [type]="'email'"
         [styleType]="'login'"
         [placeholder]="'E-Posta'"
+        formControlName="email"
         class="w-full md:w-100"
       >
       </app-input>
@@ -24,6 +35,7 @@
         [type]="'password'"
         [styleType]="'login'"
         [placeholder]="'Şifre'"
+        formControlName="password"
         class="w-full md:w-100"
       >
       </app-input>
@@ -47,10 +59,17 @@
           >
         </div>
       </div>
+      <div *ngIf="loginError" class="text-red-500 text-sm mb-4">
+        E-posta veya şifre hatalı.
+      </div>
+      <div *ngIf="loginValidError" class="text-red-500 text-sm mb-4">
+        E-posta ve şifre zorunlu alanlardır.
+      </div>
       <app-button
         [styleType]="'login'"
         [label]="isSubmitButtonLabel"
         class="w-full"
+        [type]="'submit'"
         [url]="url"
       ></app-button>
     </form>

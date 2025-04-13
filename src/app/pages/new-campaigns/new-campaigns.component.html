@@ -1,1 +1,27 @@
-<p>new-campaigns works!</p>
+<app-header></app-header>
+<div
+  class="flex justify-between align-center flex-row mx-3 mt-5 lg:mx-8 lg:mt-10"
+>
+  <div
+    class="shadow-md flex-col rounded-md bg-white mr-5 py-5 px-4 min-w-[25%] hidden lg:block"
+  >
+    <section>
+      <app-nav></app-nav>
+    </section>
+  </div>
+  <div
+    class="max-w-[100%] lg:max-w-[75%] w-full py-5 px-4 bg-white rounded-md shadow-md"
+  >
+    <div class="mb-5">
+      <div class="flex flex-row items-center text-sm">
+        <span>Anaysafa</span>
+        <fa-icon class="mx-2" [icon]="breadCrumb"></fa-icon>
+        <div>Yeni Kampanya</div>
+      </div>
+      <h1 class="text-4xl font-bold mb-5">Yeni Kampanya</h1>
+      <div>
+        <app-campaigns-form></app-campaigns-form>
+      </div>
+    </div>
+  </div>
+</div>

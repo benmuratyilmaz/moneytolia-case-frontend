@@ -1,0 +1,22 @@
+<div class="flex items-center justify-center flex-col min-h-screen">
+  <div class="mb-5">
+    <img src="images/logo.png" alt="logo" />
+  </div>
+  <div class="mb-8">
+    <h1 class="text-9xl">404</h1>
+    <p class="text-5xl text-center">Not Found</p>
+  </div>
+  <div class="text-center flex justify-center items-center flex-col">
+    <p class="mb-1">Aradığın sayfaya ulaşamadık.</p>
+    <p class="mb-5">
+      Sisteme girdikten sonra istedğiniz sayfaya gidebilirsiniz
+    </p>
+    <app-button
+      [styleType]="'404'"
+      [label]="'Giriş Yap'"
+      [url]="'/not-found'"
+      (click)="goToLogin()"
+      class="w-[100%] flex justify-center items-center"
+    ></app-button>
+  </div>
+</div>
