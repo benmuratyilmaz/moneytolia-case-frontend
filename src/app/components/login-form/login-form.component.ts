@@ -2,17 +2,23 @@ import { Component, Input } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [InputComponent, ButtonComponent, CommonModule, RouterModule],
+  imports: [InputComponent, ButtonComponent, CommonModule, RouterModule,
+    ReactiveFormsModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })
 export class LoginFormComponent {
   @Input() loginType: string = "login";
+  loginForm!: FormGroup;
+  loginError: boolean = false;
+  loginValidError: boolean = false;
   isEmail: boolean = true;
   isPassword: boolean = true;
   isPasswordRepat: boolean = false;
@@ -22,9 +28,20 @@ export class LoginFormComponent {
   isFormTitle: string = "Giriş Yap";
   url: string = "/campaigns";
 
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) { }
+
   ngOnInit() {
     this.loginProp();
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
   }
+
 
   loginProp(): void {
     switch (this.loginType) {
@@ -44,6 +61,23 @@ export class LoginFormComponent {
         this.isForgetPasswordButton = false;
         break;
 
+    }
+  }
+
+  onSubmit() {
+    const { email, password } = this.loginForm.value;
+    const isValid = this.authService.login(email, password);
+
+    if (email && password) {
+      if (isValid) {
+        this.router.navigate(['/campaigns']);
+      } else {
+        this.loginError = true;
+        this.loginValidError = false;
+      }
+    } else {
+      this.loginValidError = true;
+      this.loginError = false;
     }
   }
 }

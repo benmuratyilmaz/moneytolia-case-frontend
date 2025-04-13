@@ -13,49 +13,47 @@
       <img class="max-w-25" src="/images/test-logo.png" alt="brand-logo" />
     </div>
     <a
+      (click)="mobileMenuOpen()"
       class="block lg:hidden items-center flex text-3xl text-[#f4511e]"
-      id="menuToggle"
-      ><i class="fa-solid fa-bars"></i
-    ></a>
+    >
+      <fa-icon [icon]="mobileMenuBtn"></fa-icon>
+    </a>
     <div class="hidden lg:flex flex-row">
-      <a href="person.html" class="flex items-center justify-center me-5">
-        <i class="fa-solid fa-circle-user me-3 text-3xl"></i
-        ><span>Murat Yılmaz</span>
+      <a class="flex items-center justify-center me-5">
+        <fa-icon class="mx-2 me-3 text-3xl" [icon]="user"></fa-icon>
+        <span>{{ userName }}</span>
       </a>
-      <!-- ------- -->
       <app-button
         [styleType]="'log-out'"
         [label]="'Çıkış'"
-        [url]="'/login'"
+        (click)="logout()"
       ></app-button>
     </div>
     <div
       id="backdrop"
-      class="fixed inset-0 bg-black opacity-50 z-30 hidden"
+      *ngIf="showMobileMenu"
+      class="fixed inset-0 bg-black opacity-50 z-30"
     ></div>
     <div
-      id="sideMenu"
-      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+      *ngIf="showMobileMenu"
+      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40"
     >
       <div
         class="flex justify-end items-center m-5 pb-3 border-b border-b-gray-300 border-solid"
       >
-        <a id="menuClose" class="text-5xl text-[#f4511e]"
-          ><i class="fa-solid fa-xmark"></i
-        ></a>
+        <a (click)="mobileMenuClose()" class="text-5xl text-[#f4511e]">
+          <fa-icon [icon]="mobileMenuBtnClose"></fa-icon>
+        </a>
       </div>
       <div class="m-5 flex flex-col items-center justify-center">
-        <a
-          href="person.html"
-          class="flex items-center justify-center flex-col mb-5"
-        >
-          <i class="fa-solid fa-circle-user text-5xl mb-5"></i
-          ><span class="text-2xl font-[600]">Murat Yılmaz</span>
+        <a class="flex items-center justify-center flex-col mb-5">
+          <fa-icon class="text-5xl mb-5" [icon]="user"></fa-icon>
+          <span class="text-2xl font-[600]"> {{ userName }} </span>
         </a>
         <app-button
           [styleType]="'log-out-mobile'"
           [label]="'Çıkış'"
-          [url]="'/login'"
+          (click)="logout()"
         ></app-button>
       </div>
       <div>
